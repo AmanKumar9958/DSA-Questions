@@ -18,10 +18,23 @@ int main(){
 
     while(n >= 10){
         int sum = 0;
-        
+        while(n > 0){
+            sum += n % 10;
+            n /= 10;
+        }
+        n = sum;
     }
 
-
-
+    cout << "The result is: " << n << endl;
     return 0;
 }
+
+/*
+
+Approach:
+ismai hamne 2 loop use kiya hai, ek outer loop hai jo check karta hai ki number 10 se bada hai ya nahi (single digit hone tak), 
+aur ek inner loop hai jo number ke digits ko add karta hai.
+n % 10 se last digit nikalta hai
+n /= 10 se last digit ko hata deta hai.
+
+*/
