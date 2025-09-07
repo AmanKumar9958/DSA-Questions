@@ -1,22 +1,25 @@
 #include<iostream>
 using namespace std;
 int main(){
-    // int originalNum = 121;
-    int originalNum = 123;
-    int reversedNum = 0;
-    int lastDigit;
-    int temp = originalNum;
+    int n;
+    cout<<"Enter a number: ";
+    cin>>n;
 
-    while(temp != 0){
-        lastDigit =  temp%10;
-        reversedNum = reversedNum*10 + lastDigit;
-        temp = temp/10;
+    int temp = n;
+    int reversed = 0;
+
+    while(temp>0){
+        int last_digit = temp%10; // gives last digit
+        reversed = reversed*10 + last_digit;    // adds last digit to reversed
+        temp = temp/10; // removes last digit from temp
     }
 
-    if(originalNum == reversedNum){
-        cout << originalNum << " is a palindrome." << endl;
+    cout<<"Reversed number of "<<n<<": "<<reversed;
+
+    if(n == reversed){
+        cout<<"\n"<<n<<" is a palindrome number.";
     } else {
-        cout << originalNum << " is not a palindrome." << endl;
+        cout<<"\n"<<n<<" is not a palindrome number.";
     }
 
     return 0;
